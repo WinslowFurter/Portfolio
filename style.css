@@ -1,0 +1,543 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: masqualero, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    /*
+    font-family: masqualero, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+
+    font-family: masqualero, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+
+    font-family: masqualero, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+
+    font-family: masqualero-stencil, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+*/
+
+}
+
+body {
+    scroll-behavior: smooth;
+    cursor: cell;
+    width: 100wv;
+    overflow: hidden;
+    color: #b8e994;
+    background-color: #0c2461;
+    scroll-behavior: smooth;
+
+}
+
+#noise {
+    position: fixed;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(image/Bruit\ argentique.png);
+    background-repeat: repeat;
+    opacity: 0.2;
+    z-index: 10;
+}
+
+.pageOff {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -100vw;
+    transition: 1.5s linear;
+    z-index: -5;
+}
+
+.pageIn {
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    transition: 1.5s linear;
+
+}
+
+.pageWaiting {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin-left: 100vw;
+    z-index: -5;
+}
+
+#page1 {
+    position: absolute;
+    padding: 30vh 25vw;
+    background-color: #0c2461;
+    color: #e58e26;
+
+}
+
+#page2 {
+    background-color: #e58e26;
+    color: #0c2461;
+
+}
+
+#page3 {
+    position: absolute;
+    background-color: #0c2461;
+    color: #e58e26;
+}
+
+#page4 {
+    background-color: #e58e26;
+    color: #0c2461;
+    z-index: 5;
+    padding: 30vh 25vw;
+}
+
+h1 {
+    font-size: 10vmin;
+}
+
+h2 {
+    font-size: 6vmin;
+    font-weight: 600;
+    position: relative;
+}
+
+.textePrincipal>p {
+    position: relative;
+    font-size: 3vmin;
+    text-align: justify;
+    font-weight: 200;
+}
+
+#conteneurTextPage2 {
+    margin: 11vw 18vw;
+    width: 50vw;
+    z-index: 8;
+    position: relative;
+    color: #0c2461;
+}
+
+.textePrincipal {
+    height: 53.5vh;
+    width: 52vw;
+}
+
+#simpleLigne {
+    fill: none;
+    stroke: #3c6382;
+    stroke-dasharray: 713;
+    animation: draw 5s forwards;
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 713;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+#arrow {
+    position: absolute;
+    font-size: 8vmin;
+    cursor: pointer;
+    transition: 1s;
+    margin-left: 75vw;
+    margin-top: 50vh;
+    mix-blend-mode: difference;
+    z-index: 9;
+}
+
+#arrow:hover {
+    font-size: 10vmin;
+    margin-top: 49vh;
+    margin-left: 74.5vw;
+    transition: 0.2s;
+}
+
+#arrowSVG {
+    position: absolute;
+    margin-top: -50px;
+    margin-left: -100px;
+    height: 300px;
+    width: 100px;
+    animation: comeIn 3s infinite;
+}
+
+#arrowSVG2 {
+    height: 300px;
+    width: 100px;
+    margin-left: 50px;
+    animation: comeIn 3s infinite;
+}
+
+@keyframes comeIn {
+    0% {
+        margin-top: -50px;
+    }
+
+    80% {
+        margin-top: -50px;
+    }
+
+    81% {
+        margin-top: 0px;
+    }
+
+    90% {
+        margin-top: -50px;
+    }
+
+    95% {
+        margin-top: 0px;
+    }
+
+    100% {
+        margin-top: -50px;
+    }
+}
+
+
+/*Les carré qui bougent en page 2*/
+#fullBody {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #e58e26;
+}
+
+#mootmoot {
+    height: 10vw;
+    width: 10vw;
+    background-color: #0c2461;
+    position: relative;
+    animation: move 16s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        margin-top: 1vw;
+        margin-left: 1vw;
+    }
+
+    25% {
+        margin-top: 1vw;
+        margin-left: calc(100vw - 11vw);
+    }
+
+    50% {
+        margin-top: calc(100vh - 11vw);
+        margin-left: calc(100vw - 11vw);
+    }
+
+    75% {
+        margin-top: calc(100vh - 11vw);
+        margin-left: 1vw;
+    }
+
+    100% {
+        margin-top: 1vw;
+        margin-left: 1vw;
+    }
+}
+
+.satellite {
+    margin-left: 0px;
+    border-bottom-left-radius: 2vmax;
+    border-bottom-right-radius: 2vmax;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2vmax;
+}
+
+#mootmootmoot {
+    position: absolute;
+    background-color: #e58e26;
+    height: 4vmin;
+    width: 4vmin;
+    animation: move2 4s 5s linear infinite;
+
+}
+
+#mootmootmoot2 {
+    position: absolute;
+    background-color: #e58e26;
+    height: 4vmin;
+    width: 4vmin;
+    animation: move2 linear infinite;
+    animation-duration: 4s;
+    animation-delay: 2s;
+
+}
+
+#mootmootmoot3 {
+    position: absolute;
+    background-color: #e58e26;
+    height: 4vmin;
+    width: 4vmin;
+    animation: move2 4s linear infinite;
+    animation-delay: 3s;
+
+}
+
+#mootmootmoot4 {
+    position: absolute;
+    background-color: #e58e26;
+    height: 4vmin;
+    width: 4vmin;
+    animation: move2 4s 4s linear infinite;
+
+}
+
+@keyframes move2 {
+    0% {
+        top: 0px;
+        margin-left: 0px;
+        border-bottom-left-radius: 2vmin;
+        border-bottom-right-radius: 2vmin;
+        border-top-left-radius: 0;
+        border-top-right-radius: 2vmin;
+    }
+
+    25% {
+        top: 0px;
+        margin-left: calc(10vw - 4vmin);
+        border-bottom-left-radius: 2vmin;
+        border-bottom-right-radius: 2vmin;
+        border-top-left-radius: 2vmin;
+        border-top-right-radius: 0;
+    }
+
+    50% {
+        top: calc(100% - 4vmin);
+        margin-left: calc(10vw - 4vmin);
+        border-bottom-left-radius: 2vmin;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 2vmin;
+        border-top-right-radius: 2vmin;
+    }
+
+    75% {
+        top: calc(100% - 4vmin);
+        margin-left: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 2vmin;
+        border-top-left-radius: 2vmin;
+        border-top-right-radius: 2vmin;
+    }
+
+    100% {
+        top: 0;
+        margin-left: 0;
+        border-bottom-left-radius: 2vmin;
+        border-bottom-right-radius: 2vmin;
+        border-top-left-radius: 0;
+        border-top-right-radius: 2vmin;
+    }
+
+}
+
+/*~~~~~~~Drag And Drop~~~~~~~~*/
+
+article {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+}
+
+#landingPage3 {
+    padding: 30vh 25vw;
+}
+
+#dragAndDropShow {
+    background-color: #0c2461;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.base {
+    background-color: #e58e26;
+    position: relative;
+    height: 154px;
+    width: 154px;
+    cursor: pointer;
+}
+
+.tenu {
+    border: solid 5px #ccc;
+}
+
+.case {
+    display: inline-block;
+    height: 160px;
+    width: 160px;
+    margin: 0 150px;
+    border: solid 3px black;
+    background: #fff;
+}
+
+.hovered {
+    background: #f4f4f4;
+    border-style: dashed;
+}
+
+#grandeDiv {
+    height: 450px;
+    width: 450px;
+    background-color: #e58e26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    margin: 0 auto
+}
+
+#firstBase {
+    margin: 0 auto;
+}
+
+.reward {
+    animation: rewardAnimation 3s infinite;
+    transform-origin: center;
+}
+
+@keyframes rewardAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.arrowHidding {
+    margin-top: -400vh;
+}
+
+.arrowCome {
+    margin-top: 3vh;
+    transition: 2s;
+}
+
+#locomotive {
+    height: 300vh;
+}
+
+
+.PhotographieSection3 {
+    width: 33vmax;
+    margin: 0 1vw;
+    z-index: 20;
+    position: relative;
+}
+
+.conteneurFixedTextAndImg {
+    display: flex;
+    padding: 2vw;
+}
+
+.images-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70vw;
+    z-index: 20;
+
+}
+
+#leftConteneur {
+    width: 30vw;
+}
+
+#pinSection {
+    width: 400px;
+    height: 300px;
+    display: block;
+    line-height: 2em;
+    font-size: 1.5em;
+    background-color: #0c2461;
+    mix-blend-mode: difference;
+    transition: 0.2s;
+    overflow: hidden;
+}
+
+.pairOfImages {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-bottom: 2vw;
+}
+
+.pinFixed {
+    position: fixed;
+    width: 400px;
+
+}
+
+.positionHaute {
+    position: relative;
+}
+
+.positionBasse {
+    position: relative;
+}
+
+
+/*LOCOMOTIVE*/
+
+.section-2 {
+    height: calc(300vh + 32px + 16px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 40% 60%;
+}
+
+.section-2>.images-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 8px;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.section-2>.images-container>img {
+    width: 100%;
+    max-height: 75vh;
+    height: 100%;
+    align-self: stretch;
+    object-fit: cover;
+}
+
+.section-2>blockquote {
+    font-size: 5vmin;
+    padding: 16px 16px 0 16px;
+}
+
+.section-2>blockquote>cite {
+    display: block;
+}
